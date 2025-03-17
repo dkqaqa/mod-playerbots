@@ -1615,3 +1615,16 @@
  
  PlayerbotMgr* PlayerbotsMgr::GetPlayerbotMgr(Player* player)
  {
+     if (!(sPlayerbotAIConfig->enabled) || !player)
+     {
+         return nullptr;
+     }
+     auto itr = _playerbotsMgrMap.find(player->GetGUID());
+     if (itr != _playerbotsMgrMap.end())
+     {
+         if (!itr->second->IsBotAI())
+             return reinterpret_cast<PlayerbotMgr*>(itr->second);
+     }
+ 
+     return nullptr;
+ }

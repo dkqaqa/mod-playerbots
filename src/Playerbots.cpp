@@ -102,9 +102,7 @@ public:
             // but it should be publicly accessible and include all modifications you've made
             if (sPlayerbotAIConfig->enabled)
             {
-                ChatHandler(player->GetSession()).SendSysMessage(
-                    "|cff00ff00This server runs with |cff00ccffmod-playerbots|r "
-                    "|cffcccccchttps://github.com/liyunfan1223/mod-playerbots|r");
+                ChatHandler(player->GetSession()).SendSysMessage("");
             }
 
             if (sPlayerbotAIConfig->enabled || sPlayerbotAIConfig->randomBotAutologin)
@@ -113,9 +111,7 @@ public:
                     std::to_string(std::ceil((sPlayerbotAIConfig->maxRandomBots * 0.11 / 60) * 10) / 10.0);
                 roundedTime = roundedTime.substr(0, roundedTime.find('.') + 2);
 
-                ChatHandler(player->GetSession()).SendSysMessage(
-                    "|cff00ff00Playerbots:|r bot initialization at server startup takes about '" 
-                    + roundedTime + "' minutes.");
+                ChatHandler(player->GetSession()).SendSysMessage("");
             }
         }
     }
@@ -273,26 +269,26 @@ public:
         // especially if you are distributing a repack or hosting a public server
         // e.g. you can replace the URL with your own repository,
         // but it should be publicly accessible and include all modifications you've made
-        LOG_INFO("server.loading", "╔══════════════════════════════════════════════════════════╗");
-        LOG_INFO("server.loading", "║                                                          ║");
-        LOG_INFO("server.loading", "║              AzerothCore Playerbots Module               ║");
-        LOG_INFO("server.loading", "║                                                          ║");
-        LOG_INFO("server.loading", "╟──────────────────────────────────────────────────────────╢");
-        LOG_INFO("server.loading", "║     mod-playerbots is a community-driven open-source     ║");
-        LOG_INFO("server.loading", "║  project based on AzerothCore, licensed under AGPLv3.0   ║");
-        LOG_INFO("server.loading", "╟──────────────────────────────────────────────────────────╢");
-        LOG_INFO("server.loading", "║      https://github.com/liyunfan1223/mod-playerbots      ║");
-        LOG_INFO("server.loading", "╚══════════════════════════════════════════════════════════╝");
+        // LOG_INFO("server.loading", "╔══════════════════════════════════════════════════════════╗");
+        // LOG_INFO("server.loading", "║                                                          ║");
+        // LOG_INFO("server.loading", "║              AzerothCore Playerbots Module               ║");
+        // LOG_INFO("server.loading", "║                                                          ║");
+        // LOG_INFO("server.loading", "╟──────────────────────────────────────────────────────────╢");
+        // LOG_INFO("server.loading", "║     mod-playerbots is a community-driven open-source     ║");
+        // LOG_INFO("server.loading", "║  project based on AzerothCore, licensed under AGPLv3.0   ║");
+        // LOG_INFO("server.loading", "╟──────────────────────────────────────────────────────────╢");
+        // LOG_INFO("server.loading", "║      https://github.com/liyunfan1223/mod-playerbots      ║");
+        // LOG_INFO("server.loading", "╚══════════════════════════════════════════════════════════╝");
 
         uint32 oldMSTime = getMSTime();
         
-        LOG_INFO("server.loading", " ");
-        LOG_INFO("server.loading", "Load Playerbots Config...");
+        // LOG_INFO("server.loading", " ");
+        // LOG_INFO("server.loading", "Load Playerbots Config...");
 
         sPlayerbotAIConfig->Initialize();
 
-        LOG_INFO("server.loading", ">> Loaded playerbots config in {} ms", GetMSTimeDiffToNow(oldMSTime));
-        LOG_INFO("server.loading", " ");
+        // LOG_INFO("server.loading", ">> Loaded playerbots config in {} ms", GetMSTimeDiffToNow(oldMSTime));
+        // LOG_INFO("server.loading", " ");
     }
 };
 
